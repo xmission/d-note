@@ -88,6 +88,10 @@ h1 {font-family: 'Arvo', serif; font-size:24px; color:#aaa}
     margin-right: 25px;
 }
 
+.nav .destroy:link{
+    color: red;
+}
+
 .tooltip {
     background: #c9c9c9;
     border-radius: 20px;
@@ -101,4 +105,8 @@ h1 {font-family: 'Arvo', serif; font-size:24px; color:#aaa}
 
 .tooltip:hover {
     background: #a1a4c9;
+}
+
+.mono {
+    font-family: Andale Mono, monospace;
 }

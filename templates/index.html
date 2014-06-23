@@ -1,25 +1,18 @@
 {% extends "base.html" %}
 {% block title %}Self Destructing Notes{% endblock %}
 {% block head %}
-    <script type="application/javascript" src="{{ url_for('index')
-    }}static/js/hashcash.js"></script>
-    <script type="application/javascript" src="{{ url_for('index')
-    }}static/js/sha1-min.js"></script>
-    <script type="application/javascript" src="{{ url_for('index')
-    }}static/js/fingerprint-min.js"></script>
-    <script type="application/javascript">var fingerprint = new
-    Fingerprint().get();</script>
+    <script type="application/javascript" src="{{ url_for('index') }}static/js/hashcash.js"></script>
+    <script type="application/javascript" src="{{ url_for('index') }}static/js/sha1-min.js"></script>
+    <script type="application/javascript" src="{{ url_for('index') }}static/js/fingerprint-min.js"></script>
+    <script type="application/javascript">var fingerprint = new Fingerprint().get();</script>
 {% endblock %}
 {% block content %}
     <h1>Create a new Secret Note</h1>
-    <form method="POST" onsubmit="return validate_form()" action="{{
-    url_for('show_post', _external=True) }}">
+    <form method="POST" onsubmit="return validate_form()" action="{{ url_for('show_post', _external=True) }}">
         {% if error %}
             <p class="error">
             {% if error == "hashcash" %}
                 HashCash token is invalid. Please make sure JavaScript is enabled and try again.
-            {% elif error == "duress" %}
-                You must specify a passphrase if you enable the use of a duress key.
             {% endif %}
             </p>
         {% endif %}
@@ -27,22 +20,14 @@
         <p style="padding-top:1em">Type or paste your text below:</p>
         <textarea id="paste" name="paste"></textarea>
         <br/>
-				<div style="block1">
-					Passphrase (optional): <input style="font-family:monospace;
-					width:250px;" type="text" name="pass" id="passphrase">
-					<input type="button" value="Generate random"
-					onclick="document.getElementById('passphrase').value = make_key()">
-        </div><div style="block2">
-					<input type="checkbox" id="duress" name="duress">Add a duress key.
-					<!-- do not wrap at 80-characters. the hover text breaks -->
-					<span class="tooltip" title="A  key that you provide to someone that is demanding decryption of the note. Except, this key will immediately destroy the note, without 
-						decrypting it.">&nbsp;?&nbsp;</span>
-				</div>
+        <div style="block1">
+            Passphrase (optional): <input style="font-family:monospace; width:250px;" type="text" name="pass" id="passphrase">
+            <input type="button" value="Generate random" onclick="document.getElementById('passphrase').value = make_key()">
+        </div>
         <div style="block3">
-					<input type="hidden" id="hashcash" name="hashcash">
-					<input type="submit" id="submit" value="Submit">
-					<span id="progress">(Please be patient while token is
-					calculated.)</span>
-				</div>
+            <input type="hidden" id="hashcash" name="hashcash">
+            <input type="submit" id="submit" value="Submit">
+            <span id="progress">(Please be patient while token is calculated.)</span>
+        </div>
     </form>
 {% endblock %}
