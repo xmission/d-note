@@ -13,7 +13,7 @@
 {% endblock %}
 {% block destroy %}
             <li><a class="destroy" href="{{ url_for('fetch_url', random_url=random, _external=True) }}">Destroy note</a></li>
-{% endblock%}
+{% endblock %}
 {% block content %}
     <p><u>Your private url:</u>
         <span class="mono">{{ url_for('fetch_url', random_url=random, _external=True) }}</span>
