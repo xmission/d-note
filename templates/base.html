@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>{% block title %}{% endblock %}</title>
+				<link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
         <meta http-equiv="Cache-Control" content="no-cache, no-store,
         must-revalidate"/>
         <meta http-equiv="Pragma" content="no-cache" />
@@ -15,13 +16,19 @@
     </head>
     <body>
         <div id="header">
-            <span class="nav"><a href="{{ url_for('index') }}">New
-            Note</a></span>
-            <span class="nav"><a href="{{ url_for('security')
-            }}">Security</a></span>
-            <span class="nav"><a href="{{ url_for('faq') }}">FAQ</a></span>
-            <span class="nav"><a href="{{ url_for('about') }}">About</a></span>
-        </div>
+					<div class="container">
+						<a href="/" id="logo">&nbsp;</a>
+						<a href="http://xmission.com/" id="xmission">&nbsp;</a>
+					</div>
+					<div id="navcontainer">
+						<ul id="nav">
+							<li><a href="{{ url_for('index')}}">New Note</a></li>
+							<li><a href="{{ url_for('security')}}">Security</a></li>
+            	<li><a href="{{ url_for('faq') }}">FAQ</a></li>
+            	<li><a href="{{ url_for('about') }}">About</a></li>
+						</ul>
+					</div>
+				</div>
         <div id="content">
             {% block content %}{% endblock %}
             <noscript>
