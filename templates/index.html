@@ -8,6 +8,7 @@
 {% endblock %}
 {% block content %}
     <h1>Create a new Secret Note</h1>
+		<style>.nav_home {color:yellow !important}</style>
     <form method="POST" onsubmit="return validate_form()" action="{{ url_for('show_post', _external=True) }}">
         {% if error %}
             <p class="error">
@@ -20,14 +21,15 @@
         <p style="padding-top:1em">Type or paste your text below:</p>
         <textarea id="paste" name="paste"></textarea>
         <br/>
-        <div style="block1">
-            Passphrase (optional): <input style="font-family:monospace; width:250px;" type="text" name="pass" id="passphrase">
-            <input type="button" value="Generate random" onclick="document.getElementById('passphrase').value = make_key()">
+        <div class="blockfirst">
+            Enter optional passphrase / password:<input id="passphrase" type="text" name="pass" id="passphrase">
+            <input type="button" class="fancyBtn" value="Generate random passphrase" onclick="document.getElementById('passphrase').value = make_key()">
         </div>
-        <div style="block3">
+        <div class="blocklast">
+						When finished, press:
             <input type="hidden" id="hashcash" name="hashcash">
-            <input type="submit" id="submit" value="Submit">
-            <span id="progress">(Please be patient while token is calculated.)</span>
+            <input type="submit" class="fancyBtn" id="submit" value="Submit Secret Note" style="margin:10px auto; font-size:20px !important">
+            <span id="progress">Please be patient while token is calculated.</span>
         </div>
     </form>
 {% endblock %}

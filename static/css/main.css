@@ -7,7 +7,7 @@ body {
 }
 
 #content {
-	width:950px;
+	width:930px;
 	margin:0 auto;
 	padding-top:24px;
 }
@@ -51,15 +51,15 @@ h1 {font-family: 'Arvo', serif; font-size:24px; color:#aaa}
 
 #navcontainer {background:#EE4B00; height:29px; overflow:hidden; margin-top:18px}
 #nav {list-style-type:none; background; height:29px; margin:0; padding:0; width:950px; margin:0 auto;}
-#nav a {color:white; text-decoration:none; font-size:15px; display:block; padding:5px 8px; transition:background linear 0.5s}
+#nav a {color:white; text-decoration:none; font-size:15px; display:block; padding:5px 8px 8px 8px; transition:background linear 0.5s}
 #nav a:hover {background:#FF5E14; transition:background linear 0.2s; text-shadow:0 0 2px rgba(0,0,0,0.5)}
 #nav li {float:left; margin-right:1em}
 
 #paste {
 	background:#FBFAA2;
-	width:800px;
+	width:910px;
 	margin:0 auto 2em auto;
-	height:240px;
+	height:300px;
 	font-family:georgia;
 	font-size:20px;
 	color:#555;
@@ -68,6 +68,14 @@ h1 {font-family: 'Arvo', serif; font-size:24px; color:#aaa}
 	box-shadow:2px 2px 0 #EDEB9A, 3px 3px 0 #DDDB90, 5px 5px 0 #EDEB9A, 6px 6px 0 #DDDB90 ;
 }
 
+#content a {
+	color:#2a7dd1;
+	text-decoration:none;
+}
+
+#content a:hover {
+	text-decoration:underline;
+}
 
 .container {
 	width:950px;
@@ -108,5 +116,62 @@ h1 {font-family: 'Arvo', serif; font-size:24px; color:#aaa}
 }
 
 .mono {
-    font-family: Andale Mono, monospace;
+  font-family: Andale Mono, monospace;
 }
+
+.blockfirst {
+	padding-top:6px;
+	text-align:center;
+	width:52%;
+	float:left;
+	border-right:2px solid #ccc;
+}
+
+
+.blocklast {
+	padding-top:6px;
+	text-align:center;
+	width:46%;
+	float:left;
+}
+
+#passphrase {
+	display:block;
+	color:#006C82;
+	font-weight:bold;
+	font-family: Andale Mono, monospace;
+	font-size:22px;
+	padding:1px 6px;
+	margin:4px auto 18px auto;
+	background:#72EEFF;
+	border:1px solid #00BEE5;
+	width:300px
+}
+
+.fancyBtn {
+    font-size: 14px !important;
+    margin: 0 auto 12px auto;
+		border:1px solid #888;
+    border-radius: 4px;
+    color: #444 !important;
+    display: block;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 18px;
+    opacity: 0.98;
+    padding: 6px 16px;
+    text-align: center;
+    text-decoration: none;
+	transition:all linear 0.1s;
+	background: #dfdfdf;
+}
+
+#progress {color:#888; font-style:italic}
+
+.fancyBtn:hover {
+	background: #f2f2f2;
+	border-color:#aaa;
+	color:black;
+	transition:all linear 0.1s;
+}
+
+

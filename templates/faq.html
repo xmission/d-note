@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block title %}FAQ - Self Destructing Notes{% endblock %}
 {% block content %}
+<h1>Secrets FAQ</h1>
+<style>.nav_faq {color:yellow !important}</style>
     <ul>
         <li><a href="#storage">How are notes stored on the server?</a></li>
         <li><a href="#aes">How secure is AES-256 encryption?</a></li>
@@ -134,4 +136,6 @@
     this site. There are no backdoors in the default source code, as already
     mentioned, and nothing is calling home. All network interaction, by default,
     is communicated strictly between your browser and this server.</p>
+		
+		<br /><br />
 {% endblock %}

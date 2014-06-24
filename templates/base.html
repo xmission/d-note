@@ -22,10 +22,10 @@
             </div>
             <div id="navcontainer">
                 <ul id="nav">
-                    <li><a href="{{ url_for('index')}}">New Note</a></li>
-                    <li><a href="{{ url_for('security')}}">Security</a></li>
-                    <li><a href="{{ url_for('faq') }}">FAQ</a></li>
-                    <li><a href="{{ url_for('about') }}">About</a></li>
+                    <li><a href="{{ url_for('index')}}" class="nav_home">New Note</a></li>
+                    <li><a href="{{ url_for('security')}}" class="nav_security">Security</a></li>
+                    <li><a href="{{ url_for('faq') }}" class="nav_faq">FAQ</a></li>
+                    <li><a href="{{ url_for('about') }}" class="nav_about">About</a></li>
                     {% block destroy %}{% endblock %}
                 </ul>
             </div>
