@@ -28,8 +28,12 @@
         <div class="blocklast">
 						When finished, press:
             <input type="hidden" id="hashcash" name="hashcash">
-            <input type="submit" class="fancyBtn" id="submit" value="Submit Secret Note" style="margin:10px auto; font-size:20px !important">
-            <span id="progress">Please be patient while token is calculated.</span>
+						<div id="submitBtnHolder">
+							<input type="submit" class="fancyBtn" id="submit" value="Submit Secret Note" onClick="document.getElementById('submit').style.display='none'; document.getElementById('submittedMsg').style.display='block';" >
+						</div>
+						<div id="submittedMsg">
+							<img src="/static/img/loading.gif" alt="" align="absmiddle" /> &nbsp; Processing, please wait
+						</div><span id="progress">Please be patient while token is calculated.</span>
         </div>
     </form>
 {% endblock %}
