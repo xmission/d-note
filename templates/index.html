@@ -8,7 +8,7 @@
 {% endblock %}
 {% block content %}
     <h1>Create a new Secret Note</h1>
-		<style>.nav_home {color:yellow !important}</style>
+        <style>.nav_home {color:yellow !important}</style>
     <form method="POST" onsubmit="return validate_form()" action="{{ url_for('show_post', _external=True) }}">
         {% if error %}
             <p class="error">
@@ -26,14 +26,14 @@
             <input type="button" class="fancyBtn" value="Generate random passphrase" onclick="document.getElementById('passphrase').value = make_key()">
         </div>
         <div class="blocklast">
-						When finished, press:
+                        When finished, press:
             <input type="hidden" id="hashcash" name="hashcash">
-						<div id="submitBtnHolder">
-							<input type="submit" class="fancyBtn" id="submit" value="Submit Secret Note" onClick="document.getElementById('submit').style.display='none'; document.getElementById('submittedMsg').style.display='block';" >
-						</div>
-						<div id="submittedMsg">
-							<img src="/static/img/loading.gif" alt="" align="absmiddle" /> &nbsp; Processing, please wait
-						</div><span id="progress">Please be patient while token is calculated.</span>
+                        <div id="submitBtnHolder">
+                            <input type="submit" class="fancyBtn" id="submit" value="Submit Secret Note">
+                        </div>
+                        <div id="submittedMsg">
+                            <img src="/static/img/loading.gif" alt="" align="absmiddle" /> &nbsp; Processing, please wait
+                        </div><span id="progress">Please be patient while token is calculated.</span>
         </div>
     </form>
 {% endblock %}
