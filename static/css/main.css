@@ -44,7 +44,7 @@ body {
 h1 {font-family: 'Arvo', serif; font-size:24px; color:#aaa}
 
 #header {
-	background:url(http://asset.xmission.com/xmweb2/head-bg.png) no-repeat left top black;
+	background:url(//asset.xmission.com/xmweb2/head-bg.png) no-repeat left top black;
 	position:relative;
 	padding-top:14px;
 }
@@ -174,4 +174,21 @@ h1 {font-family: 'Arvo', serif; font-size:24px; color:#aaa}
 	transition:all linear 0.1s;
 }
 
+#submitBtnHolder {
+	margin:10px auto; 
+}
 
+#submitBtnHolder input {
+	font-size:20px !important
+}
+
+#submittedMsg {
+	display:none;
+	height:41px;
+	padding:10px;
+	font-size:18px;
+	font-family:georgia, serif;
+	font-style:italic;
+	font-weight:bold;
+	color:#999;
+}
