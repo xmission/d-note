@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% block title %}Note Error{% endblock %}
 {% block content %}
-		<h1>Error</h1>
-    <p>The passphrase you entered was not valid <a href="{{ url_for('fetch_url',
-    random_url=random, _external=True) }}">Please try again.</a></p>
+    <h1>Error</h1>
+    <p>The passphrase you entered was not valid <a href="{{ url_for('fetch_url', random_url=random, _external=True) }}">Please try again.</a></p>
 {% endblock %}

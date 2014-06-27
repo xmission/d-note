@@ -1,8 +1,7 @@
 {% extends "base.html" %}
 {% block title %}Note Created{% endblock %}
 {% block head %}
-    <script type="application/javascript" src="{{ url_for('index')
-    }}static/js/qrcode-min.js"></script>
+    <script type="application/javascript" src="{{ url_for('index') }}static/js/qrcode-min.js"></script>
     <script type="application/javascript">
         window.onload = function() {
             var secret = document.getElementById('note');
@@ -12,65 +11,57 @@
     </script>
 {% endblock %}
 {% block destroy %}
-            <li><a class="destroy" href="{{ url_for('fetch_url', random_url=random, _external=True) }}">Destroy note</a></li>
 {% endblock %}
 {% block content %}
-
-<h1>Your Secret Note Details</h1>
-
-    <p><span class="fieldTag">Your private url:</span>
+    <h1>Your Secret Note Details</h1>
+    <p>If you submitted this note in error, you can <a href="{{ url_for('fetch_url', random_url=random, _external=True) }}">destroy the note here</a></li>.</p>
+    <p>
+        <span class="fieldTag">Your private url:</span>
         <span class="mono fieldyfield" style="width:auto">{{ url_for('fetch_url', random_url=random, _external=True) }}</span>
     </p>
-
     {% if passphrase %}
-    <p><span class="fieldTag">Your passphrase:</span>
+    <p>
+        <span class="fieldTag">Your passphrase:</span>
         <span class="mono fieldyfield">{{ passphrase}}</span>
     </p>
     {% endif %}
-		
     {% if duress %}
-    <p><span class="fieldTag">Your duress key:</span>
+    <p>
+        <span class="fieldTag">Your duress key:</span>
         <span class="mono fieldyfield">{{ duress }}</span>
         <!-- do not wrap at 80-characters. the hover text breaks -->
-				<span class="timtip">
-					<span class="trigger">?</span>
-					<span class="popup">A  key that you provide to someone that is demanding decryption of the note. Except, 
-							this key will immediately destroy the note, without decrypting it
-					</span>
-				</span>
+        <span class="timtip">
+            <span class="trigger">?</span>
+            <span class="popup">A  key that you provide to someone that is demanding decryption of the note. Except, this key will immediately destroy the note, without decrypting it.</span>
+        </span>
     </p>
     {% endif %}
-		
-    <p><span class="fieldTag">Your private ID:</span>
+    <p>
+        <span class="fieldTag">Your private ID:</span>
         <span class="mono fieldyfield">{{ random }}</span>
-				<span class="timtip">
-					<span class="trigger">?</span>
-					<span class="popup">For plausible deniability, provide just the private ID to the note, rather than the full URL.</span>
-				</span>
+        <span class="timtip">
+            <span class="trigger">?</span>
+            <span class="popup">For plausible deniability, provide just the private ID to the note, rather than the full URL.</span>
+        </span>
     </p>
-
-    <p style="padding-top:10px">Alternatively, you can scan this QR code, and "share" it using your
-    mobile device via text message, email, etc.
-		<div style="font-size:12px;"><i><strong>NOTE:</strong> <a
-    href='https://f-droid.org/repository/browse/?fdid=com.google.zxing.client.android'>ZXing
-    Barcode</a> users: disable "Retrieve more info" from the settings, otherwise
-    your recipient will <strong>NOT</strong> be able to view the post.</p></i></div>
+    <p style="padding-top:10px">Alternatively, you can scan this QR code, and "share" it using your mobile device via text message, email, etc.</p>
+    <div style="font-size:12px;">
+        <i><strong>NOTE:</strong> <a href='https://f-droid.org/repository/browse/?fdid=com.google.zxing.client.android'>ZXing Barcode</a> users: disable "Retrieve more info" from the settings, otherwise your recipient will <strong>NOT</strong> be able to view the post.</p></i>
+    </div>
     <a id="show_hide" href="#" onclick="toggle('qrcode');">Show QR Code</a>
-		<div id="qrcode">&nbsp;</div>
+    <div id="qrcode">&nbsp;</div>
     <script type="text/javascript">
-        new QRCode(document.getElementById("qrcode"), { text: "{{
-        url_for('fetch_url', random_url=random, _external=True) }}",
-        correctLevel: QRCode.CorrectLevel.L });
+        new QRCode(document.getElementById("qrcode"), { text: "{{ url_for('fetch_url', random_url=random, _external=True) }}", correctLevel: QRCode.CorrectLevel.L });
         function toggle(id) {
             var state = document.getElementById(id).style.height;
             var text = document.getElementById("show_hide");
             if (state == '300px') {
                 document.getElementById(id).style.height = '0px';
-								document.getElementById(id).style.opacity = '0';
+                document.getElementById(id).style.opacity = '0';
                 text.innerHTML = "Show QR Code";
             } else {
                 document.getElementById(id).style.height = '300px';
-								document.getElementById(id).style.opacity = '1';
+                document.getElementById(id).style.opacity = '1';
                 text.innerHTML = "Hide QR Code";
             }
         }
