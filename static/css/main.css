@@ -1,118 +1,86 @@
 body {
-    color:#495057;
-    font-family:arial;
-    font-size:14px;
-    margin:0;
-    padding:0;
+  margin:0;
+	padding:0;
+	font-family:arial;
+	color:#495057;
+	font-size:14px;
 }
 
 #content {
-    margin:0 auto;
-    padding-top:24px;
-    width:930px;
+	width:930px;
+	margin:0 auto;
+	padding-top:24px;
 }
 
-#section { }
+#section {
+}
 
 #logo {
-    background:url(../img/secrets-logo.png);
-    display:block; text-decoration:none; 
-    height:49px; width:230px; 
-    overflow:hidden;
+	height:49px; width:230px; 
+	display:block; text-decoration:none; 
+	background:url(../img/secrets-logo.png);
+	overflow:hidden;
 }
 
 #xmission {
-    background:url(../img/powered-by-xmission.png);
-    border:1px solid #222;
-    border-bottom:0;
-    display:block;
-    height:66px;
-    overflow:hidden;
-    position:absolute;
-    text-decoration:none;
-    top:0; right:0;
-    transition:all linear 0.5s;
-    width:86px;
+	background:url(../img/powered-by-xmission.png);
+	width:86px;
+	height:66px;
+	overflow:hidden;
+	display:block;
+	text-decoration:none;
+	position:absolute;
+	top:0; right:0;
+	border:1px solid #222;
+	border-bottom:0;
+	transition:all linear 0.5s;
 }
 
 #xmission:hover {
-    border-color:#444;
-    transition:all linear 0.5s;
+	border-color:#444;
+	transition:all linear 0.5s;
 }
 
-h1 {
-    color:#aaa;
-    font-family: 'Arvo', serif;
-    font-size:24px;
-}
+h1 {font-family: 'Arvo', serif; font-size:24px; color:#aaa}
 
 #header {
-    background:url(//asset.xmission.com/xmweb2/head-bg.png) no-repeat left top black;
-    padding-top:14px;
-    position:relative;
+	background:url(//asset.xmission.com/xmweb2/head-bg.png) no-repeat left top black;
+	position:relative;
+	padding-top:14px;
 }
 
-#navcontainer {
-    background:#EE4B00;
-    height:29px;
-    margin-top:18px;
-    overflow:hidden;
-}
-
-#nav {
-    background; height:29px;
-    list-style-type:none;
-    margin:0 auto;
-    padding:0;
-    width:950px;
-}
-
-#nav a {
-    color:white;
-    display:block;
-    font-size:15px;
-    padding:5px 8px 8px 8px;
-    text-decoration:none;
-    transition:background linear 0.5s;
-}
-
-#nav a:hover {
-    background:#FF5E14;
-    text-shadow:0 0 2px rgba(0,0,0,0.5);
-    transition:background linear 0.2s;
-}
-
-#nav li {
-    float:left;
-    margin-right:1em;
-}
+#navcontainer {background:#EE4B00; height:29px; overflow:hidden; margin-top:18px}
+#nav {list-style-type:none; background; height:29px; margin:0; padding:0; width:950px; margin:0 auto;}
+#nav a {color:white; text-decoration:none; font-size:15px; display:block; padding:5px 8px 8px 8px; transition:background linear 0.5s}
+#nav a:hover {background:#FF5E14; transition:background linear 0.2s; text-shadow:0 0 2px rgba(0,0,0,0.5)}
+#nav li {float:left; margin-right:1em}
 
 #paste {
-    background:#FBFAA2;
-    border:1px solid #E8E696;
-    box-shadow:2px 2px 0 #EDEB9A, 3px 3px 0 #DDDB90, 5px 5px 0 #EDEB9A, 6px 6px 0 #DDDB90;
-    color:#555;
-    font-family:georgia;
-    font-size:20px;
-    height:300px;
-    margin:0 auto 2em auto;
-    padding:6px 10px;
-    width:910px;
+	background:#FBFAA2;
+	width:910px;
+	margin:0 auto 2em auto;
+	height:300px;
+	font-family:georgia;
+	font-size:20px;
+	color:#555;
+	padding:6px 10px;
+	border:1px solid #E8E696;
+	box-shadow:2px 2px 0 #EDEB9A, 3px 3px 0 #DDDB90, 5px 5px 0 #EDEB9A, 6px 6px 0 #DDDB90 ;
 }
 
 #content a {
-    color:#2a7dd1;
-    text-decoration:none;
+	color:#2a7dd1;
+	text-decoration:none;
 }
 
 #content a:hover {
-    text-decoration:underline;
+	text-decoration:underline;
 }
 
 .container {
-    margin:0 auto;
-    position:relative;
-    width:950px;
+	width:950px;
+	margin:0 auto;
+	position:relative;
 }
 
 .title {
@@ -148,158 +116,150 @@ h1 {
 }
 
 .timtip .popup {
-    color:#ffffee;
-    font-size:1px;
-    left:36px; 
-    max-height:220px;
-    opacity:0; 
-    overflow:hidden; 
-    position:absolute; 
-    top:-5px; 
-    transition:all ease-in 0.2s;
-    width:0; 
-    z-index: 1;
+	opacity:0; 
+	width:0; 
+	overflow:hidden; 
+	position:absolute; 
+	bottom:-5px; 
+	left:32px; 
+	font-size:1px;
+	max-height:220px;
+	transition:all ease-in 0.2s;
+	color:#ffffee;
+	text-align:left;
 }
 
-.timtip {
-    display:inline-block;
-    position:relative;
-}
+.timtip { position:relative; display:inline-block; }
 
 .timtip .trigger { 
-    background:#c5c5c5; 
-    border-radius:20px; 
-    color:white; 
-    display:inline-block; 
-    font-weight:bold;
-    margin-left:5px;
-    padding:0 6px;
+	display:inline-block; 
+	background:#c5c5c5; 
+	border-radius:20px; 
+	color:white; 
+	font-weight:bold;
+	padding:0 6px;
+	margin-left:5px;
 }
 
-.timtip:hover {
-    cursor:help;
-}
+.timtip:hover {cursor:help}
 
 .timtip:hover .popup {
-    background:#ffffee;
-    border:1px solid #aaa;
-    border-radius:3px;
-    box-shadow:1px 1px 6px #ddd;
-    color:#444;
-    font-size:14px;
-    line-height:150%;
-    opacity:1;
-    padding:6px 12px;
-    transition:all ease-out 0.2s;
-    width:220px;
+	opacity:1;
+	width:220px;
+	padding:6px 12px;
+	border-radius:3px;
+	border:1px solid #aaa;
+	box-shadow:1px 1px 6px #ddd;
+	background:#ffffee;
+	color:#444;
+	font-size:14px;
+	line-height:150%;
+	transition:all ease-out 0.2s;
 }
 
 .timtip:hover .trigger {
-    background:#a1a4c9;
+	background:#a1a4c9;
 }
 
 #qrcode {
-    height:0px; 
-    opacity:0;
-    overflow:hidden;
-    transition:all linear 0.2s;
+	height:0px; 
+	opacity:0;
+	overflow:hidden;
+	transition:all linear 0.2s;
 }
 
 
 .mono {
-    font-family: Andale Mono, monospace;
+  font-family: Andale Mono, monospace;
 }
 
 .blockfirst {
-    border-right:2px solid #ccc;
-    float:left;
-    padding-top:6px;
-    text-align:center;
-    width:52%;
+	padding-top:6px;
+	text-align:center;
+	width:52%;
+	float:left;
+	border-right:2px solid #ccc;
 }
 
 
 .blocklast {
-    float:left;
-    padding-top:6px;
-    text-align:center;
-    width:46%;
+	padding-top:6px;
+	text-align:center;
+	width:46%;
+	float:left;
 }
 
 #passphrase {
-    background:#72EEFF;
-    border:1px solid #00BEE5;
-    color:#006C82;
-    display:block;
-    font-family: Andale Mono, monospace;
-    font-size:22px;
-    font-weight:bold;
-    margin:4px auto 18px auto;
-    padding:1px 6px;
-    width:300px
+	display:block;
+	color:#006C82;
+	font-weight:bold;
+	font-family: Andale Mono, monospace;
+	font-size:22px;
+	padding:1px 6px;
+	margin:4px auto 18px auto;
+	background:#72EEFF;
+	border:1px solid #00BEE5;
+	width:300px
 }
 
 .fieldyfield {
-    background:#72EEFF;
-    border:1px solid #00BEE5;
-    color:#004C62;
-    display:inline-block;
-    font-family: Andale Mono, monospace;
-    font-size:22px;
-    padding:1px 6px;
-    width:310px;
+	display:inline-block;
+	color:#004C62;
+	font-family: Andale Mono, monospace;
+	font-size:22px;
+	padding:1px 6px;
+	background:#72EEFF;
+	border:1px solid #00BEE5;
+	width:310px;
 }
 
 .fancyBtn {
-    background: #dfdfdf;
-    border:1px solid #888;
-    border-radius: 4px;
-    color: #444 !important;
-    display: inline-block;
-    font-family: Arial,Helvetica,sans-serif;
-    font-size: 18px;
     font-size: 14px !important;
     margin: 0 auto 12px auto;
+		border:1px solid #888;
+    border-radius: 4px;
+    color: #444 !important;
+    display: block;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 18px;
     opacity: 0.98;
     padding: 6px 16px;
     text-align: center;
     text-decoration: none;
-    transition:all linear 0.1s;
+	transition:all linear 0.1s;
+	background: #dfdfdf;
 }
 
-#progress {
-    color:#888;
-    font-style:italic
-}
+#progress {color:#888; font-style:italic}
 
 .fancyBtn:hover {
-    background: #f2f2f2;
-    border-color:#aaa;
-    color:black;
-    transition:all linear 0.1s;
+	background: #f2f2f2;
+	border-color:#aaa;
+	color:black;
+	transition:all linear 0.1s;
 }
 
 #submitBtnHolder {
-    margin:10px auto; 
+	margin:10px auto; 
 }
 
 #submitBtnHolder input {
-    font-size:20px !important
+	font-size:20px !important
 }
 
 #submittedMsg {
-    color:#999;
-    display:none;
-    font-family:georgia, serif;
-    font-size:18px;
-    font-style:italic;
-    font-weight:bold;
-    height:41px;
-    padding:10px;
+	display:none;
+	height:41px;
+	padding:10px;
+	font-size:18px;
+	font-family:georgia, serif;
+	font-style:italic;
+	font-weight:bold;
+	color:#999;
 }
 
 .fieldTag {
-    display:block;
-    font-size:12px;
-    padding-bottom:4px;
+	display:block;
+	font-size:12px;
+	padding-bottom:4px;
 }

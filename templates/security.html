@@ -17,15 +17,15 @@
     </div>
     <div class="section">
         <p class="title">Private Passphrase</p>
-        <p class="desc">The application uses a per note random key that is stored in the URL and is part of the encryption and decryption of the notes. The application supports using a custom passphrase to encrypt and decrypt the note. This custom passphrase is created using a password-based key derivation function (PBKDF2). The private passphrase is not stored to disk in the application, but this does not prevent the system administrator from modifying the code to do so. Therefore, it is best that you host this application yourself, on your own server.</p>
+        <p class="desc">The application uses a per note random key that is stored in the URL and is part of the encryption and decryption of the notes. The application supports using a custom passphrase to encrypt and decrypt the note. This custom passphrase is created using a password-based key derivation function (PBKDF2). The private passphrase is never stored to disk in the application.</p>
     </div>
     <div class="section">
         <p class="title">Hashcash Protected</p>
-        <p class="desc">To prevent spammers from abusing the service, note submission is protected by the client solving a proof-of-work puzzle by minting a valid <a herf="http://hashcash.org">Hashcash</a> token. As such, JavaScript is required to post a note. Hashcash tokens are stored on the server to prevent double-spending of the same token.  Unfortunately, minting Hashcash tokens does not work well with mobile browsers.</p>
+        <p class="desc">To prevent spammers from abusing the service, note submission is protected by the client solving a proof-of-work puzzle by minting a valid <a href="http://hashcash.org">Hashcash</a> token. As such, JavaScript is required to post a note. Hashcash tokens are stored on the server to prevent double-spending of the same token.  Unfortunately, minting Hashcash tokens may take some additional time to submit the note with mobile browsers.</p>
     </div>
     <div class="section">
         <p class="title">Anonymous Fingerprints</p>
-        <p class="desc">Part of Hashcash tokens is the ability to create a uniquely identifiable resource string. Typically, this is an email address. However, with this application, your browser fingerprint is used as the resource string. The browser fingerprint is a 32-bit <a href="https://en.wikipedia.org/wiki/MurmurHash">MurmurHash number</a>. By itself, it cannot identify who it belongs to. However, the system administrator could tie that fingerprint to an IP address and user agent string by looking in his web server logs.</p>
+        <p class="desc">Part of Hashcash tokens is the ability to create a uniquely identifiable resource string. Typically, this is an email address. However, with this application, your browser fingerprint is used as the resource string. The browser fingerprint is a 32-bit <a href="https://en.wikipedia.org/wiki/MurmurHash">MurmurHash number</a>. By itself, it cannot identify who it belongs to.</p>
     </div>
 
     <br/>
