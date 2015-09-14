@@ -6,6 +6,13 @@ body {
 	font-size:14px;
 }
 
+#secreturl { width: auto;}
+
+#submit-pass {
+   margin:0 0 0 8px;
+   display:inline-block;
+}
+
 #content {
 	width:930px;
 	margin:0 auto;
@@ -55,11 +62,14 @@ h1 {font-family: 'Arvo', serif; font-size:24px; color:#aaa}
 #nav a:hover {background:#FF5E14; transition:background linear 0.2s; text-shadow:0 0 2px rgba(0,0,0,0.5)}
 #nav li {float:left; margin-right:1em}
 
+#thenote { white-space: pre;  word-wrap: break-word;}
 #paste {
+	height:300px;
+}
+#paste, #thenote {
 	background:#FBFAA2;
 	width:910px;
 	margin:0 auto 2em auto;
-	height:300px;
 	font-family:georgia;
 	font-size:20px;
 	color:#555;
