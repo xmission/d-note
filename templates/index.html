@@ -8,7 +8,7 @@
 {% endblock %}
 {% block content %}
     <h1>Create a new Secret Note</h1>
-    <p>Securely send PINs, messages, passwords, or other sensitive or private information. All notes are encrypted and destroyed immedately after viewing.</p>
+    <p>Securely send PINs, messages, passwords, or other sensitive or private information. All notes are encrypted and destroyed immediately after viewing.</p>
     <style>.nav_home {color:yellow !important}</style>
     <form method="POST" onsubmit="return validate_form()" action="{{ url_for('show_post', _external=True) }}">
         {% if error %}
