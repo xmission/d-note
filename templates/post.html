@@ -2,13 +2,6 @@
 {% block title %}Note Created{% endblock %}
 {% block head %}
     <script type="application/javascript" src="{{ url_for('index') }}static/js/qrcode-min.js"></script>
-    <script type="application/javascript">
-        window.onload = function() {
-            var secret = document.getElementById('note');
-            secret.focus ();
-            secret.select ();
-        }
-    </script>
 {% endblock %}
 {% block destroy %}
 {% endblock %}
@@ -17,11 +10,11 @@
     <p>Copy the URL below, and send it to the recipient.</p>
     <p>
         <span class="fieldTag">Your private URL:</span>
-        <span class="mono fieldyfield" id="secreturl">{{ url_for('fetch_url', random_url=random, _external=True) }}</span>
+        <input class="mono fieldyfield" id="secreturl" value="{{ url_for('fetch_url', random_url=random, _external=True) }}" type="text" onclick="select()" />
     </p>
     {% if passphrase %}
     <p>
-        <span class="fieldTag">Your passphrase:</span>
+        <span class="fieldTag">Your password:</span>
         <span class="mono fieldyfield">{{ passphrase}}</span>
     </p>
     {% endif %}
@@ -67,5 +60,8 @@
                 text.innerHTML = "Hide QR Code";
             }
         }
+
+        document.getElementById("secreturl").focus();
+        document.getElementById("secreturl").select();
     </script>
 {% endblock %}

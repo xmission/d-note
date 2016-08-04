@@ -8,9 +8,18 @@
     <script type="application/javascript">
         window.onload = function() {
             var secret = document.getElementById('paste');
-            secret.focus ();
+            secret.focus();
         }
-    </script>    
+
+        window.onpageshow = function(event) {
+        if (event.persisted) {
+            document.getElementById("paste").value = "";
+            document.getElementById("passphrase").value = "";
+            document.getElementById("submitBtn").style.display="block";
+            document.getElementById("submittedMsg").style.display="none";
+        }
+        };
+    </script>
 {% endblock %}
 {% block content %}
     <h1>Create a new Secret Note</h1>
@@ -31,10 +40,10 @@
         <span class/"noselect">Optional password:</span>
         <span class="timtip">
             <span class="trigger">?</span>
-            <span class="popup">This password will encrypt and decrypt your note, rather than the random password created by the server.</span>
+            <span class="popup">This password will encrypt and decrypt your note, rather than the one created by the server.</span>
         </span>
-        <input id="passphrase" type="text" name="pass" id="passphrase">
-        <input type="button" class="fancyBtn" value="Generate random passphrase" onclick="document.getElementById('passphrase').value = make_key()">
+        <input id="passphrase" type="text" name="pass">
+        <input type="button" class="fancyBtn" value="Generate" onclick="document.getElementById('passphrase').value = make_key()">
     </div>
     <div class="blocklast">
         <input type="hidden" id="hashcash" name="hashcash">
@@ -44,20 +53,6 @@
             <div id="submittedMsg">
                 <img src="/static/img/loading.gif" alt="" align="absmiddle" /> &nbsp; Processing, please wait
             </div>
-            <span id="progress">Please be patient while token is calculated.</span>
-            <span class="timtip">
-                <span class="trigger">?</span>
-                <span class="popup">A puzzle is solved in your browser proving you are human. The puzzle should be solved in a few seconds at most depending on your hardware.</span>
-            </span>
         </div>
     </form>
-
-<script>
-window.onpageshow = function(event) {
-if (event.persisted) {
-    window.location.reload() 
-}
-};
-</script>
-
 {% endblock %}

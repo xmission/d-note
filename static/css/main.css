@@ -6,7 +6,7 @@ body {
 	font-size:14px;
 }
 
-#secreturl { width: auto;}
+#secreturl { width:610px !important;}
 
 #submit-pass {
    margin:0 0 0 8px;
@@ -240,7 +240,16 @@ h1 {font-family: 'Arvo', serif; font-size:24px; color:#aaa}
 	background: #dfdfdf;
 }
 
-#progress {color:#888; font-style:italic}
+#progress {
+	color:#888; 
+	font-style:italic;
+	font-family:arial,sans-serif;
+	font-size:14px;
+	font-weight:normal;
+	display:block;
+	clear:both;
+	padding-top:0.75em;
+}
 
 .fancyBtn:hover {
 	background: #f2f2f2;
