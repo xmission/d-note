@@ -1,14 +1,39 @@
 {% extends "base.html" %}
 {% block title %}Private Note{% endblock %}
 {% block head %}
-    <meta http-equiv="Refresh" content="180"; url="{{ url_for('index', _external=True) }}" />
-    <script type="text/javascript">
-        setTimeout(function(){window.location.href="{{ url_for('index',
-        _external=True) }}"}, 180000);
-    </script>
 {% endblock %}
 {% block content %}
     <h1>Reading secret note</h1>
-    <p>Here is your private note, decrypted only for your browser. This note has been securely destroyed on the server. In 3 minutes, you will be redirected back to the home page.</p>
+    <p>Your private note, decrypted only for your browser.</p>
     <div id="thenote" readonly class="noselect">{{ text }}</div>
+
+    This page will clear automatically in 
+    <div id="timerholder">
+      <div id="r"><b>3:00</b></div>
+      <div id="barholder">
+        <div id="bar">
+          &nbsp;
+        </div>
+      </div>
+    </div>
+
+
+    <script type="text/javascript">
+      time=3*60-1,r=document.getElementById('r'),tmp=time;
+      timer=setInterval(function(){
+      var w=tmp/time*100;
+      document.getElementById('bar').style.width=w+"%";
+      var c=tmp--,m=(c/60)>>0,s=(c-m*60)+'';
+      r.textContent=m+':'+(s.length>1?'':'0')+s+' minutes'
+      if(tmp<0){timeout();}
+      },1000);
+
+      function timeout(){
+        clearInterval(timer);
+        r.textContent="timeout";
+        document.getElementById('thenote').textContent="";
+        document.getElementById('content').innerHTML="<div class='container'><h1>Secret note destroyed</h1>Nothing to see here, move along.</div>";
+        window.location.assign("/");
+      }
+    </script>
 {% endblock %}

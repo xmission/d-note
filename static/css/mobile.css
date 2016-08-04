@@ -65,13 +65,17 @@ border-radius:2px; width:100%; font-size:18px; background:#ccc
 !important; padding:4px 8px; -webkit-box-sizing: border-box; 
 -moz-box-sizing: border-box; box-sizing: border-box; color:#EE4B00 }
      #passphrase:active, #passphrase:focus {background:white !important }
-     .fancyBtn { color:#eee !important; margin:6px 0; padding:10px 0; 
+
+.fancyBtn { 
+  color:#eee !important; 
+  margin:6px 0; padding:10px 16px; 
 width:100%; background: #555555; background: -moz-linear-gradient(top, 
 #555555 0%, #001111 100%); background: -webkit-gradient(linear, left 
 top, left bottom, color-stop(0%,#555555), color-stop(100%,#001111)); 
 background: -webkit-linear-gradient(top, #555555 0%,#001111 100%); 
 background: -ms-linear-gradient(top, #555555 0%,#001111 100%); 
 background: linear-gradient(to bottom, #555555 0%,#001111 100%); }
+
      .fancyBtn:hover {  color:#fff !important; margin:6px 0; width:100%; 
 background: #555555; background: -moz-linear-gradient(top, #555555 0%, 
 #001111 100%); background: -webkit-gradient(linear, left top, left 

@@ -23,7 +23,7 @@
 {% endblock %}
 {% block content %}
     <h1>Create a new Secret Note</h1>
-    <p>Securely send sensitive or private information. All notes are encrypted and destroyed immediately after viewing.</p>
+    <p>Securely send sensitive or private information. All notes are encrypted and are destroyed immediately after viewing.</p>
     <style>.nav_home {color:yellow !important}</style>
     <form method="POST" onsubmit="return checkForm()" action="{{ url_for('show_post', _external=True) }}" id="pasteForm">
         {% if error %}
@@ -37,13 +37,13 @@
     <textarea id="paste" name="paste" placeholder="Enter your text"></textarea>
     <br/>
     <div class="blockfirst">
-        <span class/"noselect">Optional password:</span>
+        <span class="noselect">Optional password:</span>
         <span class="timtip">
             <span class="trigger">?</span>
             <span class="popup">This password will encrypt and decrypt your note, rather than the one created by the server.</span>
-        </span>
+        </span><br />
         <input id="passphrase" type="text" name="pass">
-        <input type="button" class="fancyBtn" value="Generate" onclick="document.getElementById('passphrase').value = make_key()">
+        <input type="button" class="fancyBtn" value="Generate" onclick="document.getElementById('passphrase').value = make_key()" id="generateBtn">
     </div>
     <div class="blocklast">
         <input type="hidden" id="hashcash" name="hashcash">
