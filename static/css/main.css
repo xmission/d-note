@@ -15,6 +15,7 @@ body {
 
 #content {
 	width:930px;
+	max-width:100%;
 	margin:0 auto;
 	padding-top:24px;
 }
@@ -63,12 +64,15 @@ h1 {font-family: 'Arvo', serif; font-size:24px; color:#aaa}
 #nav li {float:left; margin-right:1em}
 
 #thenote { white-space: pre;  word-wrap: break-word;}
+
 #paste {
 	height:300px;
 }
+
 #paste, #thenote {
 	background:#FBFAA2;
-	width:910px;
+	width:95%;
+	max-width:910px;
 	margin:0 0 2em 0;
 	font-family:georgia;
 	font-size:20px;
@@ -88,7 +92,8 @@ h1 {font-family: 'Arvo', serif; font-size:24px; color:#aaa}
 }
 
 .container {
-	width:950px;
+	width:900px;
+	max-width:95%;
 	margin:0 auto;
 	position:relative;
 }

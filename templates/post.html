@@ -11,16 +11,17 @@
         <span class="fieldTag">Your private Secret Note URL:</span>
         <input class="mono fieldyfield" id="secreturl" value="{{ url_for('fetch_url', random_url=random, _external=True) }}" type="text" onclick="select()" />
     </p>
+    <div style="border-top:1px solid #ccc; padding-top:1em">    
     {% if passphrase %}
     <p>
         <span class="fieldTag">Your password:</span>
-        <span class="mono fieldyfield ffmuted" onclick="select()">{{ passphrase}}</span>
+        <input class="mono fieldyfield ffmuted" onclick="select()" value="{{ passphrase}}" />
     </p>
     {% endif %}
     {% if duress %}
     <p>
-        <span class="fieldTag" onclick="select()">Your duress key:</span>
-        <span class="mono fieldyfield ffmuted">{{ duress }}</span>
+        <span class="fieldTag">Your duress key:</span>
+        <input class="mono fieldyfield ffmuted" onclick="select()" value="{{ duress }}" />
         <!-- do not wrap at 80-characters. the hover text breaks -->
         <span class="timtip">
             <span class="trigger">?</span>
@@ -28,11 +29,10 @@
         </span>
     </p>
     {% endif %}
-    <div style="border-top:1px solid #ccc; padding-top:1em">
     <p>For plausible deniability, provide just the private ID to the note, rather than the full URL:</p>
     <p>
-        <span class="fieldTag" onclick="select()">Your private ID:</span>
-        <span class="mono fieldyfield ffmuted">{{ random }}</span>
+        <span class="fieldTag">Your private ID:</span>
+        <input class="mono fieldyfield ffmuted" onclick="select()" value="{{ random }}" />
     </p>
     <p>If you submitted this note in error, you can <a href="{{ url_for('fetch_url', random_url=random, _external=True) }}" style="color:red">destroy the note here</a></li>.</p>
     <p style="padding-top:10px" class="mobile-hidden">Alternatively, you can scan the QR code, and "share" it using your mobile device via text message, email, etc.</p>
