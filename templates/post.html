@@ -34,7 +34,9 @@
         <span class="fieldTag">Your private ID:</span>
         <input class="mono fieldyfield ffmuted" onclick="select()" value="{{ random }}" />
     </p>
-    <p>If you submitted this note in error, you can <a href="{{ url_for('fetch_url', random_url=random, _external=True) }}" style="color:red">destroy the note here</a></li>.</p>
+    <p>If you submitted this note in error, you can 
+       <a href="{{ url_for('fetch_url', random_url=random, _external=True) }}" id="destroyBtn">destroy the note here</a></li><span class="mobile-hidden">.</span>
+    </p>
     <p style="padding-top:10px" class="mobile-hidden">Alternatively, you can scan the QR code, and "share" it using your mobile device via text message, email, etc.</p>
     <div style="font-size:12px;">
         <i><strong>NOTE:</strong> <a href='https://f-droid.org/repository/browse/?fdid=com.google.zxing.client.android'>ZXing Barcode</a> users: disable "Retrieve more info" from the settings, otherwise your recipient will <strong>NOT</strong> be able to view the post.</p></i>

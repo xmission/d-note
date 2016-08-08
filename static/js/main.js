@@ -160,7 +160,7 @@ function checkForm(){
     }
     else {
 
-        document.getElementById('submitBtn').style.display='none';
+        document.getElementById('submitBtnHolder').style.display='none';
         document.getElementById('submittedMsg').style.display='block';
         setTimeout(function () {
            validate_token(fingerprint); 

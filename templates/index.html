@@ -5,25 +5,10 @@
     <script type="application/javascript" src="{{ url_for('index') }}static/js/sha1-min.js"></script>
     <script type="application/javascript" src="{{ url_for('index') }}static/js/fingerprint-min.js"></script>
     <script type="application/javascript">var fingerprint = new Fingerprint().get();</script>
-    <script type="application/javascript">
-        window.onload = function() {
-            var secret = document.getElementById('paste');
-            secret.focus();
-        }
-
-        window.onpageshow = function(event) {
-        if (event.persisted) {
-            document.getElementById("paste").value = "";
-            document.getElementById("passphrase").value = "";
-            document.getElementById("submitBtn").style.display="block";
-            document.getElementById("submittedMsg").style.display="none";
-        }
-        };
-    </script>
 {% endblock %}
 {% block content %}
     <h1>Create a new Secret Note</h1>
-    <p>Securely send sensitive or private information. All notes are encrypted and are destroyed immediately after viewing.</p>
+    <p style="margin-top:4px">Securely send sensitive or private information. All notes are encrypted and are destroyed immediately after viewing.</p>
     <style>.nav_home {color:yellow !important}</style>
     <form method="POST" onsubmit="return checkForm()" action="{{ url_for('show_post', _external=True) }}" id="pasteForm">
         {% if error %}
@@ -34,8 +19,10 @@
             </p>
         {% endif %}
     <input name="new_url" type="hidden" value="{{ random }}">
-    <textarea id="paste" name="paste" placeholder="Enter your text"></textarea>
-    <br/>
+    <div style="position:relative;">
+        <div class="easy-number mobile-hidden">1</div>
+        <textarea id="paste" name="paste" placeholder="Enter your text"></textarea>
+    </div>
     <div class="blockfirst">
         <span class="noselect">Optional password:</span>
         <span class="timtip">
@@ -48,6 +35,7 @@
     <div class="blocklast">
         <input type="hidden" id="hashcash" name="hashcash">
             <div id="submitBtnHolder">
+                <div class="easy-number mobile-hidden" style="top:14px">2</div>
                 <input type="button" class="fancyBtn" id="submitBtn" value="Submit Secret Note" onClick="checkForm();">
             </div>
             <div id="submittedMsg">
@@ -55,4 +43,20 @@
             </div>
         </div>
     </form>
+<br clear="all" />
+<script type="application/javascript">
+    window.onload = function() {
+        var secret = document.getElementById('paste');
+        secret.focus();
+    }
+
+    window.onpageshow = function(event) {
+    if (event.persisted) {
+        document.getElementById("paste").value = "";
+        document.getElementById("passphrase").value = "";
+        document.getElementById("submitBtnHolder").style.display="block";
+        document.getElementById("submittedMsg").style.display="none";
+    }
+    };
+</script>
 {% endblock %}

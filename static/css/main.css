@@ -1,8 +1,8 @@
 body {
   margin:0;
-	padding:0;
+	padding:0 0 2em 0;
 	font-family:arial;
-	color:#495057;
+	color:#666;
 	font-size:14px;
 }
 
@@ -14,8 +14,9 @@ body {
 }
 
 #content {
-	width:930px;
-	max-width:100%;
+	width:910px;
+	padding-left:20px;
+	max-width:97%;
 	margin:0 auto;
 	padding-top:24px;
 }
@@ -49,7 +50,7 @@ body {
 	transition:all linear 0.5s;
 }
 
-h1 {font-family: 'Arvo', serif; font-size:24px; color:#aaa}
+h1 {font-family: 'Arvo', serif; font-size:24px; color:#aaa; margin:0;}
 
 #header {
 	background:url(//asset.xmission.com/xmweb2/head-bg.png) no-repeat left top black;
@@ -73,7 +74,7 @@ h1 {font-family: 'Arvo', serif; font-size:24px; color:#aaa}
 	background:#FBFAA2;
 	width:95%;
 	max-width:910px;
-	margin:0 0 2em 0;
+	margin:0 0 1em 0;
 	font-family:georgia;
 	font-size:20px;
 	color:#555;
@@ -82,7 +83,7 @@ h1 {font-family: 'Arvo', serif; font-size:24px; color:#aaa}
 	box-shadow:2px 2px 0 #EDEB9A, 3px 3px 0 #DDDB90, 5px 5px 0 #EDEB9A, 6px 6px 0 #DDDB90 ;
 }
 
-#content a {
+.container a {
 	color:#2a7dd1;
 	text-decoration:none;
 }
@@ -101,6 +102,7 @@ h1 {font-family: 'Arvo', serif; font-size:24px; color:#aaa}
 .title {
     font-size: 150%;
     font-weight: bold;
+    margin-bottom:0.4em;
 }
 
 .desc {
@@ -284,6 +286,7 @@ h1 {font-family: 'Arvo', serif; font-size:24px; color:#aaa}
 #submitBtnHolder {
 	padding-top:7px;
 	float:right;
+	position:relative;
 }
 
 #submitBtnHolder input {
@@ -334,4 +337,22 @@ h1 {font-family: 'Arvo', serif; font-size:24px; color:#aaa}
   width:100%;
   background:#bbbbff;
   color:white;
+}
+
+.easy-number {
+	position: absolute;
+	left: -30px;
+	background: #03afd3;
+	width: 8px;
+	height: 17px;
+	padding: 2px 6px;
+	border-radius: 20px;
+	color: white;
+	top: 5px;
+	border: 2px solid #03afd3;
+	font-weight: bold;
+}
+
+#destroyBtn {
+	color:#EE4B00;
 }
