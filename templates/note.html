@@ -7,9 +7,8 @@
     <p>Your private note, decrypted only for your browser.</p>
     <div id="thenote" readonly class="noselect">{{ text }}</div>
 
-    This page will clear automatically in 
     <div id="timerholder">
-      <div id="r"><b>3:00</b></div>
+      <div id="r">This page will clear automatically in <b>3:00</b></div>
       <div id="barholder">
         <div id="bar">
           &nbsp;
@@ -24,7 +23,7 @@
       var w=tmp/time*100;
       document.getElementById('bar').style.width=w+"%";
       var c=tmp--,m=(c/60)>>0,s=(c-m*60)+'';
-      r.textContent=m+':'+(s.length>1?'':'0')+s+' minutes'
+       r.innerHTML = 'This page will clear automatically in <b>' + m + ':' + (s.length > 1 ? '' : '0') + s + '</b>';
       if(tmp<0){timeout();}
       },1000);
 

@@ -72,6 +72,7 @@ h1 {font-family: 'Arvo', serif; font-size:24px; color:#aaa; margin:0;}
 
 #paste, #thenote {
 	background:#FBFAA2;
+	min-height:120px;
 	width:95%;
 	max-width:910px;
 	margin:0 0 1em 0;
@@ -318,13 +319,13 @@ h1 {font-family: 'Arvo', serif; font-size:24px; color:#aaa; margin:0;}
 #timerholder {
   font-family:arial;
   text-align:left;
-  width:100px;
   color:#555;
   display:inline-block;
+	margin: 1em 0 0 0;
 }
 
 #barholder {
-  width:82px;
+  width:100%;
   background:#ddd;
   height:2px;
   margin-top:0.25em;

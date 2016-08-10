@@ -8,7 +8,7 @@
 {% block content %}
     <h1>Your Secret Note Details</h1>
     <p style="padding-bottom:5em">
-        <span class="fieldTag">Your private Secret Note URL:</span>
+        <span class="fieldTag">Send this private Secret Note URL to your recipient:</span>
         <input class="mono fieldyfield" id="secreturl" value="{{ url_for('fetch_url', random_url=random, _external=True) }}" type="text" onclick="select()" />
     </p>
     <div style="border-top:1px solid #ccc; padding-top:1em">    
