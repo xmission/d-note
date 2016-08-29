@@ -146,10 +146,26 @@ function validate_form() {
         return false;
     }
     else {
-        document.getElementById('submit').style.display='none';
-        document.getElementById('submittedMsg').style.display='block';
         setTimeout(function(){},0);
         validate_token(fingerprint);
+        return true;
+    }
+}
+
+
+function checkForm(){
+    if(document.getElementById('paste').value == "") {
+        alert("You need to enter a message.");
+        return false;
+    }
+    else {
+
+        document.getElementById('submitBtnHolder').style.display='none';
+        document.getElementById('submittedMsg').style.display='block';
+        setTimeout(function () {
+           validate_token(fingerprint); 
+           document.getElementById("pasteForm").submit();
+        }, 1000);
         return true;
     }
 }

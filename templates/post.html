@@ -2,33 +2,26 @@
 {% block title %}Note Created{% endblock %}
 {% block head %}
     <script type="application/javascript" src="{{ url_for('index') }}static/js/qrcode-min.js"></script>
-    <script type="application/javascript">
-        window.onload = function() {
-            var secret = document.getElementById('note');
-            secret.focus ();
-            secret.select ();
-        }
-    </script>
 {% endblock %}
 {% block destroy %}
 {% endblock %}
 {% block content %}
     <h1>Your Secret Note Details</h1>
-    <p>Copy the URL below, and send it to the recipient.</p>
-    <p>
-        <span class="fieldTag">Your private URL:</span>
-        <span class="mono fieldyfield" id="secreturl">{{ url_for('fetch_url', random_url=random, _external=True) }}</span>
+    <p style="padding-bottom:5em">
+        <span class="fieldTag">Send this private Secret Note URL to your recipient:</span>
+        <input class="mono fieldyfield" id="secreturl" value="{{ url_for('fetch_url', random_url=random, _external=True) }}" type="text" onclick="select()" />
     </p>
+    <div style="border-top:1px solid #ccc; padding-top:1em">    
     {% if passphrase %}
     <p>
-        <span class="fieldTag">Your passphrase:</span>
-        <span class="mono fieldyfield">{{ passphrase}}</span>
+        <span class="fieldTag">Your password:</span>
+        <input class="mono fieldyfield ffmuted" onclick="select()" value="{{ passphrase}}" />
     </p>
     {% endif %}
     {% if duress %}
     <p>
         <span class="fieldTag">Your duress key:</span>
-        <span class="mono fieldyfield">{{ duress }}</span>
+        <input class="mono fieldyfield ffmuted" onclick="select()" value="{{ duress }}" />
         <!-- do not wrap at 80-characters. the hover text breaks -->
         <span class="timtip">
             <span class="trigger">?</span>
@@ -36,22 +29,21 @@
         </span>
     </p>
     {% endif %}
-    <p>Alternatively, you can copy the private ID below, if you have previously agreed to using this service:</p>
+    <p>For plausible deniability, provide just the private ID to the note, rather than the full URL:</p>
     <p>
         <span class="fieldTag">Your private ID:</span>
-        <span class="mono fieldyfield">{{ random }}</span>
-        <span class="timtip">
-            <span class="trigger">?</span>
-            <span class="popup">For plausible deniability, provide just the private ID to the note, rather than the full URL.</span>
-        </span>
+        <input class="mono fieldyfield ffmuted" onclick="select()" value="{{ random }}" />
     </p>
-    <p>If you submitted this note in error, you can <a href="{{ url_for('fetch_url', random_url=random, _external=True) }}">destroy the note here</a></li>.</p>
+    <p>If you submitted this note in error, you can 
+       <a href="{{ url_for('fetch_url', random_url=random, _external=True) }}" id="destroyBtn">destroy the note here</a></li><span class="mobile-hidden">.</span>
+    </p>
     <p style="padding-top:10px" class="mobile-hidden">Alternatively, you can scan the QR code, and "share" it using your mobile device via text message, email, etc.</p>
     <div style="font-size:12px;">
         <i><strong>NOTE:</strong> <a href='https://f-droid.org/repository/browse/?fdid=com.google.zxing.client.android'>ZXing Barcode</a> users: disable "Retrieve more info" from the settings, otherwise your recipient will <strong>NOT</strong> be able to view the post.</p></i>
     </div>
     <a id="show_hide" href="#" onclick="toggle('qrcode');">Show QR Code</a>
     <div id="qrcode">&nbsp;</div>
+</div>
     <script type="text/javascript">
         new QRCode(document.getElementById("qrcode"), { text: "{{ url_for('fetch_url', random_url=random, _external=True) }}", correctLevel: QRCode.CorrectLevel.L });
         function toggle(id) {
@@ -67,5 +59,8 @@
                 text.innerHTML = "Hide QR Code";
             }
         }
+
+        document.getElementById("secreturl").focus();
+        document.getElementById("secreturl").select();
     </script>
 {% endblock %}
