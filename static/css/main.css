@@ -6,7 +6,7 @@ body {
 	font-size:14px;
 }
 
-#secreturl { width:610px !important;}
+#secreturl { width:670px !important;}
 
 #submit-pass {
    margin:0 0 0 8px;
@@ -71,6 +71,7 @@ h1 {font-family: 'Arvo', serif; font-size:24px; color:#aaa; margin:0;}
 }
 
 #paste, #thenote {
+	white-space: normal;
 	background:#FBFAA2;
 	min-height:120px;
 	width:95%;
