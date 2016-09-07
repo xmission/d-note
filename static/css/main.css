@@ -64,25 +64,27 @@ h1 {font-family: 'Arvo', serif; font-size:24px; color:#aaa; margin:0;}
 #nav a:hover {background:#FF5E14; transition:background linear 0.2s; text-shadow:0 0 2px rgba(0,0,0,0.5)}
 #nav li {float:left; margin-right:1em}
 
-#thenote { white-space: pre;  word-wrap: break-word;}
+#thenote {
+	white-space: pre-line;
+	word-wrap: break-word;
+}
 
 #paste {
 	height:300px;
 }
 
 #paste, #thenote {
-	white-space: normal;
 	background:#FBFAA2;
-	min-height:120px;
-	width:95%;
-	max-width:910px;
-	margin:0 0 1em 0;
-	font-family:georgia;
-	font-size:20px;
-	color:#555;
-	padding:6px 10px;
 	border:1px solid #E8E696;
 	box-shadow:2px 2px 0 #EDEB9A, 3px 3px 0 #DDDB90, 5px 5px 0 #EDEB9A, 6px 6px 0 #DDDB90 ;
+	color:#555;
+	font-family:georgia;
+	font-size:20px;
+	margin:0 0 1em 0;
+	max-width:910px;
+	min-height:120px;
+	padding:6px 10px;
+	width:95%;
 }
 
 .container a {
